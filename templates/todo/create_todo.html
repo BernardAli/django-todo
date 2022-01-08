@@ -1,0 +1,24 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block title %}
+
+New
+
+{% endblock %}
+
+{% block content %}
+
+    <h3>Create todo</h3>
+
+    <form action="{% url 'create_todo' %}" class="ui form" method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Submit" class="ui button primary">
+    </form>
+
+
+{% endblock %}
+
